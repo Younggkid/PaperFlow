@@ -117,7 +117,7 @@ def run():
         run_years(args.conference, year_start, year_end)
     elif args.bibtex:
         bibtex_path = os.path.join(DATA_DIR, args.bibtex)
-        get_one_pdf(bibtex_path)
+        get_one_pdf(bibtex_path,"name",0)
     elif args.title:
         title = args.title
         logging.info("[+] 使用Google搜索该论文，获取对应pdf")

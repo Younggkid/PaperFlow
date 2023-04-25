@@ -9,6 +9,9 @@ from urllib.parse import unquote
 import re
 import json
 import urllib3
+import sqlite3
+import copy
+
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # TODO 使用修饰器重构retry类函数
@@ -651,11 +654,10 @@ def get_key_year_bibtex(key, year):
         save_file(bibtex_path, one_bibtex.encode())
         time.sleep(SLEEP_TIME)
     return True
+    
 
 
-
-
-def get_one_pdf(bibtex_path):
+def get_one_pdf(bibtex_path,name,year):
     pdf_path = bibtex_path.replace("bibtex", "pdf").replace('.bib', '.pdf')
     info_path = bibtex_path.replace('bibtex', 'info').replace('.bib', '.txt')
     logging.debug("[+] 尝试获取pdf: {}...".format(bibtex_path))
@@ -669,6 +671,30 @@ def get_one_pdf(bibtex_path):
         pdf = result['pdf']
         info = {'pdf_url': result['url'], 'title': title, 'pdf_path': pdf_path, 'info_path': info_path,
                 'bibtex_path': bibtex_path, 'info': result['info']}
+        info_insert = {
+            'ReadOrNot' :0,
+            'PublicationYear' :year,
+            'Publisher' :name,
+            'Author' : 'todo',
+            'PaperName' :title,
+            'Tags' : 'todo',
+            'Notes' :'todo',
+            'Url'   : result['url'],
+            'Path'   : pdf_path,
+            'LastReadDate'    :'todo',
+            'Q0' :  'todo',
+            'Q1' :  'todo',
+            'Q2' :  'todo',
+            'Q3' :  'todo',
+            'Q4' :  'todo',
+            'Q5' :  'todo',
+            'Q6' :  'todo',
+            'Q7' :  'todo',
+            'Q8' :  'todo',
+            'Q9' :  'todo'
+        }
+        
+        add_paper(info_insert)
         save_file(info_path, json.dumps(info).encode())
         save_file(pdf_path, pdf)
         logging.debug("[+] 获取成功... bib: {}\tpdf_path: {}".format(bibtex_path, pdf_path))
@@ -678,6 +704,80 @@ def get_one_pdf(bibtex_path):
         logging.warning(info)
         save_fails(info)
     return False
+
+def add_paper(info:dict):
+    FIELD_LIST = ["No",   "ReadOrNot",   "PublicationYear",  "Publisher",  
+        "Author",   'PaperName',      "Tags",      "Notes",
+        "Url",            "Path",               'LastReadDate',
+        "Q0",     "Q1",     "Q2",     "Q3",     "Q4",
+        "Q5",     "Q6",     "Q7",     "Q8",     "Q9"  
+        ]
+    
+    SIMPLE_FIELD_LIST = ["ReadOrNot",   "PublicationYear", "Publisher",  
+        "Author",   'PaperName',      "Tags",
+        ]
+
+    DB_REL_PATH = "../database.db"
+    print('当前所在路径: %s' % os.getcwd())
+    if os.path.isfile(DB_REL_PATH):
+        m_con = sqlite3.connect(DB_REL_PATH)
+    else:
+        # 若文件不存在，则初始化数据库
+        # 数据库表名为paperlist
+        m_con = sqlite3.connect(DB_REL_PATH)
+        m_con.execute('''create table paperlist(
+            No INTEGER PRIMARY KEY AUTOINCREMENT,
+            ReadOrNot       INT,
+            PublicationYear INT,
+            Publisher       TEXT,
+            Author          TEXT,
+            PaperName       TEXT,
+            Tags            TEXT,
+            Notes           TEXT,
+            Url             TEXT,
+            Path            TEXT,
+            LastReadDate    TEXT,
+            Q0              TEXT,
+            Q1              TEXT,
+            Q2              TEXT,
+            Q3              TEXT,
+            Q4              TEXT,
+            Q5              TEXT,
+            Q6              TEXT,
+            Q7              TEXT,
+            Q8              TEXT,
+            Q9              TEXT
+            );
+            ''')
+        m_con.commit()
+    fields = "ReadOrNot"  # 字段
+    values = "0"  # 值
+
+    if not info.get("PaperName"):
+        return 0
+
+    # 依次从info中读取字段
+    add_fields = copy.deepcopy(FIELD_LIST)
+    add_fields.remove("No")
+    add_fields.remove("ReadOrNot")
+    add_fields.remove("PublicationYear")
+
+    if info.get("PublicationYear"):
+        fields += "," + "PublicationYear"
+        values += "," + str(info.get("PublicationYear"))
+    for item in add_fields:
+        if info.get(item):
+            fields += "," + item
+            values += ",\"" + str(info.get(item)) + "\""
+        else:
+            fields += "," + item
+            values += ",\"\""
+
+    m_con.execute(f'''
+        insert into paperlist ({fields}) values ({values});     
+        ''')
+    m_con.commit()
+
 
 
 # 基于本地的bibtex获取对应的pdf
@@ -691,7 +791,7 @@ def get_key_year_pdf(key, year):
         if check_exist(pdf_path):
             logging.debug("[-] {} 已经存在，继续...".format(pdf_path))
             continue
-        get_one_pdf(bibtex_path)
+        get_one_pdf(bibtex_path,"name",year)
     return True
 
 
@@ -723,7 +823,7 @@ def run_one_year(key, year):
     for i in range(len(papers)):
         bibtex_path = DATA_DIR + '/bibtex/{name}/{year}/{num}.bib'.format(name=name, year=year, num=i)
         get_one_bibtex(papers[i]['info']['url'], bibtex_path)
-        get_one_pdf(bibtex_path)
+        get_one_pdf(bibtex_path,name,year)
 
 
 # 获取所有的bibtex
