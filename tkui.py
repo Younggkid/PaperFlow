@@ -64,13 +64,15 @@ class TkUI:
 
         # 窗口基本设置
         self.root.geometry("1500x800+100+100")
-        self.root.title("Simple Paper Lib")
+        self.root.title("PaperFlow")
         self.root.protocol("WM_DELETE_WINDOW",self.root.destroy)
 
         # 设置菜单栏
-        self.menu.add_command(label="Add", command=lambda:open_add_ui(self))
-        self.menu.add_command(label="Setting", command=lambda:open_setting_ui(self))
-        self.menu.add_command(label="Exit", command=self.root.destroy)
+        self.menu.add_command(label="手动添加", command=lambda:open_add_ui(self))
+        self.menu.add_command(label="自动导入", command=lambda:do_nothing(self))
+        self.menu.add_command(label="设置", command=lambda:open_setting_ui(self))
+        self.menu.add_command(label="退出", command=self.root.destroy)
+
         # 放置菜单栏
         self.root.config(menu=self.menu)
 
@@ -168,6 +170,8 @@ class TkUI:
         self.root.mainloop()
 
         return None
+    
+    
 
 
     def search_add_tag(self):
@@ -323,6 +327,85 @@ def search(ui:TkUI, info:dict={}):
         return ui.m_db.show_all_paper()
     else:
         return ui.m_db.find_paper(info)
+
+
+
+
+def do_nothing(ui:TkUI):
+    def add_paper():
+        # 添加按钮的功能函数
+        # 获取文献信息并将文献添加到数据库
+        paper_dict = {}
+        if publication_year_text.get(1.0,'end').rstrip() != "":
+            try:
+                paper_dict['PublicationYear'] = int(publication_year_text.get(1.0,'end').rstrip())
+            except:
+                showerror("Failed", "文献发表年份必须为整数")
+                return
+        paper_dict['Publisher'] = publisher_text.get(1.0,'end').rstrip()
+        if publisher_text.get(1.0,'end').rstrip() == "":
+            showerror("Failed", "会议名不能为空")
+            return 
+        
+        # 更新显示信息
+        # print(paper_dict)
+        ui.m_db.add_paper(paper_dict)
+        ui.table_renewer()
+        ui.search_renewer()
+        
+        add_root.destroy()
+        return
+
+    # 添加文献界面主窗口
+    add_root = tk.Toplevel(ui.root)
+    add_root.geometry('600x200')
+    add_root.resizable(True, True)
+    add_root.title("爬取paper")
+    add_root.protocol("WM_DELETE_WINDOW",add_root.destroy)
+    add_root.wm_attributes('-topmost',1)
+    # 主窗口划分
+    add_root.grid_rowconfigure(1, weight=1)
+    add_root.grid_columnconfigure(0, weight=1)
+    button_frame = tk.Frame(add_root) # 按钮区
+    button_frame.grid(row=0, column=0, columnspan=2 ,sticky='new')
+    add_canvas = tk.Canvas(add_root) # 添加区
+    add_canvas.bind('<Configure>', lambda event: add_canvas.config(scrollregion=add_canvas.bbox('all')))
+    add_canvas.grid(row=1, column=0, sticky='ewns')
+    # 添加区主体
+    add_frame = tk.Frame(add_canvas) 
+    add_canvas.create_window((0,0), window=add_frame, anchor='n')
+    # 修改区滚动条
+    ybar = ttk.Scrollbar(add_root,orient=VERTICAL,command=add_canvas.yview)
+    ybar.configure(command=add_canvas.yview)
+    add_canvas.configure(yscrollcommand=ybar.set)
+    ybar.grid(row=1, column = 1, sticky='ns')
+
+    # 在按钮区添加按钮
+    add_button = tk.Button(button_frame)
+    add_button.config(text='爬取', command=lambda:call_API(), state='normal')
+    add_button.grid(row=0, column=0)
+
+    # 添加区
+    # PublicationYear
+    publication_year_label = tk.Label(add_frame, text="发表年份：")
+    publication_year_label.grid(row=3,column=0)
+    publication_year_text = tk.Text(add_frame, height=1)
+    publication_year_text.config(state='normal', bg='#ffffff')
+    publication_year_text.grid(row=4,column=0)
+    # Publisher
+    publisher_label = tk.Label(add_frame, text="会议：")
+    publisher_label.grid(row=5,column=0)
+    publisher_text = tk.Text(add_frame, height=1)
+    publisher_text.config(state='normal', bg='#ffffff')
+    publisher_text.grid(row=6,column=0)
+ 
+    
+    def call_API():
+        os.system('cd crawl_API && python run.py --help')
+
+
+
+
 
 
 def open_add_ui(ui:TkUI):
