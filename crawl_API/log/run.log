@@ -1,0 +1,14 @@
+[INFO   ] [app.py  :818] [+] 尝试获取NDSS会议2022年度的Bibtex
+[INFO   ] [app.py  :442] [+] NDSS 2022 会议列表获取成功，共83篇论文...
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-64-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-241/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-37-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-186/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-370-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-255/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-284-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-261/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-127-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-233/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-133-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-192/
