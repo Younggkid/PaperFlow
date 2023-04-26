@@ -4,7 +4,7 @@ from tkinter.messagebox import showerror, showinfo
 from tkinter.scrolledtext import ScrolledText
 import configparser, os, subprocess, copy
 import sys
-
+import crawl_API
 from database import DataBase
 from globalvar import *
 
@@ -385,9 +385,6 @@ def do_nothing(ui:TkUI):
     add_button.config(text='爬取', command=lambda:call_API(), state='normal')
     add_button.grid(row=0, column=0)
 
-    stop_button = tk.Button(button_frame)
-    stop_button.config(text='停止', command=lambda:stop_crawl(), state='normal')
-    stop_button.grid(row=0, column=1)
 
     # 添加区
     # PublicationYear
@@ -412,8 +409,7 @@ def do_nothing(ui:TkUI):
         os.system('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
         #print('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
         
-    def stop_crawl():
-        sys.exit(0)
+
 
 
 
