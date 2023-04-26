@@ -12,3 +12,96 @@
 [INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-233/
 [INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-133-paper.pdf
 [INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-192/
+[INFO   ] [app.py  :818] [+] 尝试获取CCS会议2021年度的Bibtex
+[INFO   ] [app.py  :442] [+] CCS 2021 会议列表获取成功，共225篇论文...
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3460120.3485362  -->  https://dl.acm.org/doi/10.1145/3460120.3485362
+[INFO   ] [app.py  :295] [+] 从dl_acm获取pdf成功...https://dl.acm.org/doi/pdf/10.1145/3460120.3485362
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://doi.org/10.1145/3460120.3485362
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3460120.3484750  -->  https://dl.acm.org/doi/10.1145/3460120.3484750
+[ERROR  ] [app.py  :376] Exceeded 30 redirects.
+[WARNING] [app.py  :292] [-] 从dl_acm获取pdf失败...https://dl.acm.org/doi/pdf/10.1145/3460120.3484750
+[INFO   ] [app.py  :144] [-] 通过get_pdf_from_dl_acm获取失败...https://dl.acm.org/doi/10.1145/3460120.3484750	 
+[WARNING] [app.py  :571] [-] 官网获取失败...https://doi.org/10.1145/3460120.3484750
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.st/10.1145/3460120.3484750	0
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.ee/10.1145/3460120.3484750	1
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.se/10.1145/3460120.3484750	2
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.se/10.1145/3460120.3484750	3
+[WARNING] [app.py  :33 ] [-] get_pdf_from_doi 获取pdf失败! https://sci-hub.do/10.1145/3460120.3484750
+[WARNING] [app.py  :240] [-] URL中DOI 非法，无法获取...10.1145/3460120.3484750
+[WARNING] [app.py  :587] [-] DOI获取失败...10.1145/3460120.3484750
+[INFO   ] [app.py  :818] [+] 尝试获取CCS会议2022年度的Bibtex
+[INFO   ] [app.py  :442] [+] CCS 2022 会议列表获取成功，共287篇论文...
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3548606.3560709  -->  https://dl.acm.org/doi/10.1145/3548606.3560709
+[ERROR  ] [app.py  :376] Exceeded 30 redirects.
+[WARNING] [app.py  :292] [-] 从dl_acm获取pdf失败...https://dl.acm.org/doi/pdf/10.1145/3548606.3560709
+[INFO   ] [app.py  :144] [-] 通过get_pdf_from_dl_acm获取失败...https://dl.acm.org/doi/10.1145/3548606.3560709	 
+[WARNING] [app.py  :571] [-] 官网获取失败...https://doi.org/10.1145/3548606.3560709
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.se/10.1145/3548606.3560709	0
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.ee/10.1145/3548606.3560709	1
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.ee/10.1145/3548606.3560709	2
+[INFO   ] [app.py  :60 ] [+] SCI-HUB获取下载地址失败，等待一会儿...，重新获取pdf!https://sci-hub.ee/10.1145/3548606.3560709	3
+[WARNING] [app.py  :33 ] [-] get_pdf_from_doi 获取pdf失败! https://sci-hub.ee/10.1145/3548606.3560709
+[WARNING] [app.py  :240] [-] URL中DOI 非法，无法获取...10.1145/3548606.3560709
+[WARNING] [app.py  :587] [-] DOI获取失败...10.1145/3548606.3560709
+[INFO   ] [app.py  :595] [+] 谷歌搜索获取成功...Private and Reliable Neural Network Inference
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3548606.3560610  -->  https://dl.acm.org/doi/10.1145/3548606.3560610
+[INFO   ] [app.py  :818] [+] 尝试获取CCS会议2022年度的Bibtex
+[INFO   ] [app.py  :442] [+] CCS 2022 会议列表获取成功，共287篇论文...
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3548606.3560709  -->  https://dl.acm.org/doi/10.1145/3548606.3560709
+[INFO   ] [app.py  :295] [+] 从dl_acm获取pdf成功...https://dl.acm.org/doi/pdf/10.1145/3548606.3560709
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://doi.org/10.1145/3548606.3560709
+[WARNING] [app.py  :126] [-] URL发生重定向 https://doi.org/10.1145/3548606.3560610  -->  https://dl.acm.org/doi/10.1145/3548606.3560610
+[INFO   ] [app.py  :818] [+] 尝试获取NDSS会议2020年度的Bibtex
+[INFO   ] [app.py  :442] [+] NDSS 2020 会议列表获取成功，共89篇论文...
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24271-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/context-a-generic-approach-for-mitigating-spectre/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24157-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/locally-differentially-private-frequency-estimation-with-consistency/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24140-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/melting-pot-of-origins-compromising-the-intermediary-web-services-that-rehost-websites/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24449-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/soda-a-generic-online-detection-framework-for-smart-contracts/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24267-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/broken-metre-attacking-resource-metering-in-evm/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24083-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/symtcp-eluding-stateful-deep-packet-inspection-with-automated-discrepancy-discovery/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/23022-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/a-view-from-the-cockpit-exploring-pilot-reactions-to-attacks-on-avionic-systems/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/23032-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/towards-plausible-graph-anonymization/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24310-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/when-malware-is-packin-heat-limits-of-machine-learning-classifiers-based-on-static-analysis-features/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24016-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/murai-securing-embedded-systems-with-return-address-integrity/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24331-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/finding-safety-in-numbers-with-secure-allegation-escrows/
+[INFO   ] [app.py  :818] [+] 尝试获取NDSS会议2022年度的Bibtex
+[INFO   ] [app.py  :442] [+] NDSS 2022 会议列表获取成功，共83篇论文...
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-64-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-241/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-37-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-186/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-370-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-255/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-284-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-261/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-127-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-233/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-133-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-192/
+[INFO   ] [app.py  :818] [+] 尝试获取NDSS会议2022年度的Bibtex
+[INFO   ] [app.py  :442] [+] NDSS 2022 会议列表获取成功，共83篇论文...
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-64-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-241/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-37-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-186/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-370-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-255/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-284-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-261/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-127-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-233/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2022-133-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/auto-draft-192/
+[INFO   ] [app.py  :818] [+] 尝试获取CCS会议2019年度的Bibtex
+[INFO   ] [app.py  :442] [+] CCS 2019 会议列表获取成功，共207篇论文...
