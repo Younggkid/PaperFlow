@@ -30,13 +30,13 @@ class DataBase:
         ]
 
     DB_REL_PATH = "database.db"
-    DB_REL_PATH2 = "..\..\database.db"
 
     def __init__(self):
         # 初始化函数，生成并连接数据库
 
         # 声明全部变量的名称
         self.m_con = None    # 数据库接口        
+        
         # 测试用，每次删库跑路
         # try: 
         #     os.remove(rel_path) 
@@ -44,37 +44,6 @@ class DataBase:
         #     pass
 
         # 检查数据库文件是否存在
-        if os.path.isfile(DataBase.DB_REL_PATH2):
-            self.m_con = sqlite3.connect(DataBase.DB_REL_PATH2)
-        else:
-            # 若文件不存在，则初始化数据库
-            # 数据库表名为paperlist
-            self.m_con = sqlite3.connect(DataBase.DB_REL_PATH2)
-            self.m_con.execute('''create table paperlist(
-                No INTEGER PRIMARY KEY AUTOINCREMENT,
-                ReadOrNot       INT,
-                PublicationYear INT,
-                Publisher       TEXT,
-                Author          TEXT,
-                PaperName       TEXT,
-                Tags            TEXT,
-                Notes           TEXT,
-                Url             TEXT,
-                Path            TEXT,
-                LastReadDate    TEXT,
-                Q0              TEXT,
-                Q1              TEXT,
-                Q2              TEXT,
-                Q3              TEXT,
-                Q4              TEXT,
-                Q5              TEXT,
-                Q6              TEXT,
-                Q7              TEXT,
-                Q8              TEXT,
-                Q9              TEXT
-                );
-                ''')
-            self.m_con.commit()
         if os.path.isfile(DataBase.DB_REL_PATH):
             self.m_con = sqlite3.connect(DataBase.DB_REL_PATH)
         else:
