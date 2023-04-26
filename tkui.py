@@ -3,7 +3,7 @@ from tkinter import DISABLED, HORIZONTAL, VERTICAL, ttk, filedialog
 from tkinter.messagebox import showerror, showinfo
 from tkinter.scrolledtext import ScrolledText
 import configparser, os, subprocess, copy
-
+import sys
 
 from database import DataBase
 from globalvar import *
@@ -385,11 +385,15 @@ def do_nothing(ui:TkUI):
     add_button.config(text='爬取', command=lambda:call_API(), state='normal')
     add_button.grid(row=0, column=0)
 
+    stop_button = tk.Button(button_frame)
+    stop_button.config(text='停止', command=lambda:stop_crawl(), state='normal')
+    stop_button.grid(row=0, column=1)
+
     # 添加区
     # PublicationYear
     publication_year_label = tk.Label(add_frame, text="发表年份：")
     publication_year_label.grid(row=3,column=0)
-    publication_year_text = tk.Text(add_frame, height=1)
+    publication_year_text = tk.Text(add_frame, height=1,width=10)
     publication_year_text.config(state='normal', bg='#ffffff')
     publication_year_text.grid(row=4,column=0)
     # Publisher
@@ -401,7 +405,16 @@ def do_nothing(ui:TkUI):
  
     
     def call_API():
-        os.system('cd crawl_API && python run.py --help')
+        year_num = int(publication_year_text.get(1.0,'end').rstrip())
+        publication_year_start = str(year_num)
+        publication_year__end = str(year_num+1)
+        publisher = (publisher_text.get(1.0,'end').rstrip())
+        os.system('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
+        #print('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
+        
+    def stop_crawl():
+        sys.exit(0)
+
 
 
 
