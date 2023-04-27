@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import DISABLED, HORIZONTAL, VERTICAL, ttk, filedialog
+
+from tkinter import *
+from tkinter.ttk import *
 from tkinter.messagebox import showerror, showinfo
 from tkinter.scrolledtext import ScrolledText
 import configparser, os, subprocess, copy
@@ -399,6 +402,7 @@ def do_nothing(ui:TkUI):
     publisher_text = tk.Text(add_frame, height=1)
     publisher_text.config(state='normal', bg='#ffffff')
     publisher_text.grid(row=6,column=0)
+
  
     
     def call_API():
@@ -406,6 +410,7 @@ def do_nothing(ui:TkUI):
         publication_year_start = str(year_num)
         publication_year__end = str(year_num+1)
         publisher = (publisher_text.get(1.0,'end').rstrip())
+ 
         os.system('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
         #print('cd crawl_API && python run.py -c {0} -s {1} -e {2}'.format(publisher,publication_year_start,publication_year__end))
         

@@ -141,3 +141,11 @@
 [INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/fltrust-byzantine-robust-federated-learning-via-trust-bootstrapping/
 [INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/ndss2021_5A-3_24464_paper.pdf
 [INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/pfirewall-semantics-aware-customizable-data-flow-control-for-smart-home-privacy-protection/
+[INFO   ] [app.py  :818] [+] 尝试获取NDSS会议2020年度的Bibtex
+[INFO   ] [app.py  :442] [+] NDSS 2020 会议列表获取成功，共89篇论文...
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24271-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/context-a-generic-approach-for-mitigating-spectre/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24157-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/locally-differentially-private-frequency-estimation-with-consistency/
+[INFO   ] [app.py  :214] [+] get_pdf_from_url 从官网获取pdf链接成功,url:https://www.ndss-symposium.org/wp-content/uploads/2020/02/24140-paper.pdf
+[INFO   ] [app.py  :568] [+] 官网获取成功...https://www.ndss-symposium.org/ndss-paper/melting-pot-of-origins-compromising-the-intermediary-web-services-that-rehost-websites/
