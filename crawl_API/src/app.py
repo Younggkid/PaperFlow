@@ -718,7 +718,7 @@ def add_paper(info:dict):
         ]
 
     DB_REL_PATH = "../database.db"
-    print('当前所在路径: %s' % os.getcwd())
+
     if os.path.isfile(DB_REL_PATH):
         m_con = sqlite3.connect(DB_REL_PATH)
     else:
