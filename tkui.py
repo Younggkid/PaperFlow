@@ -69,6 +69,7 @@ class TkUI:
         self.root.geometry("1500x800+100+100")
         self.root.title("PaperFlow")
         self.root.protocol("WM_DELETE_WINDOW",self.root.destroy)
+        self.root.iconphoto(False, tk.PhotoImage(file='asset/科技论文.png'))
 
         # 设置菜单栏
         self.menu.add_command(label="手动添加", command=lambda:open_add_ui(self))
