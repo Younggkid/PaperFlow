@@ -88,7 +88,7 @@ class TkUI:
 
         
         # 搜索栏
-        self.search_frame.config(bg='#1e1e1e', bd='1p')
+        self.search_frame.config(bg='#f3f3f3', bd='1p')
         self.search_frame.grid_columnconfigure(1, weight=1)
         # 按发表年份搜索
         self.pubyear_frame = tk.Frame(self.search_frame)
