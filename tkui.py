@@ -138,7 +138,7 @@ class TkUI:
         # 搜索按钮
         tk.Button(self.search_frame, text="筛选", width=20, height=4, command=self.search_paper).grid(row=5, column=0, sticky='we')
         tk.Button(self.search_frame,text="重置", width=20, height=2, command=self.resume_paper).grid(row=6, column=0, sticky='we') 
-        tk.Button(self.search_frame,text="重置", width=20, height=2, command=self.resume_paper).grid(row=8, column=0, sticky='we') 
+        
 
         # 文献列表显示主体
         self.show_frame.config(bd='1p')
